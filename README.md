@@ -10,7 +10,7 @@ It is continuously updated as more tables, queries, and schemas are added.
 
 | Folder/File       | Description |
 |------------------|-------------|
-| `schemas/`       | Scripts for creating schemas and tables. |
+| `db_practice_queries/`       | Added sample data for the patient.patient table and a query to view all records. |
 | `data/`          | Scripts for inserting sample data into tables. |
 | `queries/`       | Practice queries: SELECT, JOIN, AGGREGATE, SUBQUERIES, etc. |
 | `other_files/`   | Placeholder for future SQL files and exercises. |
