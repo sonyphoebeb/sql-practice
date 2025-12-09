@@ -1,1 +1,108 @@
+<h1>🧾 Patient Schema & Table Creation</h1>
+
+<h2>📌 Overview</h2>
+<p>
+This document contains the SQL script used to create the 
+<b><i>patient</i></b> schema and the <b>patient.details</b> table.
+It includes fields for basic patient information along with metadata such as 
+creation and modification tracking.
+</p>
+
+<h2>🛠️ SQL Script</h2>
+
+<pre>
+CREATE SCHEMA patient;
+
+GO
+
+CREATE TABLE patient.details (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    guid UNIQUEIDENTIFIER DEFAULT NEWID(),
+    patient_first_name VARCHAR(250),
+    patient_last_name VARCHAR(250),
+    patient_age DATE,
+    is_deleted BIT DEFAULT 0,
+    created_by VARCHAR(50) DEFAULT (SUSER_SNAME()),
+    created_at DATETIME DEFAULT (GETDATE()),
+    modified_by VARCHAR(50),
+    modified_at DATETIME
+);
+</pre>
+
+<h2>📂 Table Structure</h2>
+
+<table>
+  <tr>
+    <th>Column Name</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+
+  <tr>
+    <td>id</td>
+    <td>INT (IDENTITY)</td>
+    <td>Primary key (auto-increment)</td>
+  </tr>
+
+  <tr>
+    <td>guid</td>
+    <td>UNIQUEIDENTIFIER</td>
+    <td>Unique global identifier</td>
+  </tr>
+
+  <tr>
+    <td>patient_first_name</td>
+    <td>VARCHAR(250)</td>
+    <td>Patient's first name</td>
+  </tr>
+
+  <tr>
+    <td>patient_last_name</td>
+    <td>VARCHAR(250)</td>
+    <td>Patient's last name</td>
+  </tr>
+
+  <tr>
+    <td>patient_age</td>
+    <td>DATE</td>
+    <td>Date of birth or age reference</td>
+  </tr>
+
+  <tr>
+    <td>is_deleted</td>
+    <td>BIT</td>
+    <td>Soft delete flag (0 = active, 1 = deleted)</td>
+  </tr>
+
+  <tr>
+    <td>created_by</td>
+    <td>VARCHAR(50)</td>
+    <td>User who created the record</td>
+  </tr>
+
+  <tr>
+    <td>created_at</td>
+    <td>DATETIME</td>
+    <td>Timestamp when record was created</td>
+  </tr>
+
+  <tr>
+    <td>modified_by</td>
+    <td>VARCHAR(50)</td>
+    <td>User who last modified the record</td>
+  </tr>
+
+  <tr>
+    <td>modified_at</td>
+    <td>DATETIME</td>
+    <td>Timestamp of last modification</td>
+  </tr>
+</table>
+
+<h2>✨ Notes</h2>
+<ul>
+  <li>Uses <b>NEWID()</b> to auto-generate GUID.</li>
+  <li>Tracks record creation and modification using system functions.</li>
+  <li>Supports soft deletion using <b>is_deleted</b> flag.</li>
+</ul>
 
