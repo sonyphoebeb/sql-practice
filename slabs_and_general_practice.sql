@@ -105,3 +105,6 @@ CREATE TABLE patient.details (
   <li>Tracks record creation and modification using system functions.</li>
   <li>Supports soft deletion using <b>is_deleted</b> flag.</li>
 </ul>
+
+git mv slabs_and_general_practice.sql slabs_and_general_practice.html
+
