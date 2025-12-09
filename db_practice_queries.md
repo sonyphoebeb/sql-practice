@@ -27,17 +27,63 @@ It includes fields for basic patient information along with metadata such as cre
 
 ## 📂 Table Structure
 
-Column Name	Data Type	Description
-id	INT (IDENTITY)	Primary key (auto-increment)
-guid	UNIQUEIDENTIFIER	Unique global identifier
-patient_first_name	VARCHAR(250)	Patient's first name
-patient_last_name	VARCHAR(250)	Patient's last name
-patient_age	DATE	Date of birth or age reference
-is_deleted	BIT	Soft delete flag (0 = active, 1 = deleted)
-created_by	VARCHAR(50)	User who created the record
-created_at	DATETIME	Timestamp when record was created
-modified_by	VARCHAR(50)	User who last modified the record
-modified_at	DATETIME	Timestamp of last modification
+<table>
+  <tr>
+    <th>Column Name</th>
+    <th>Data Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>INT (IDENTITY)</td>
+    <td>Primary key (auto-increment)</td>
+  </tr>
+  <tr>
+    <td>guid</td>
+    <td>UNIQUEIDENTIFIER</td>
+    <td>Unique global identifier</td>
+  </tr>
+  <tr>
+    <td>patient_first_name</td>
+    <td>VARCHAR(250)</td>
+    <td>Patient's first name</td>
+  </tr>
+  <tr>
+    <td>patient_last_name</td>
+    <td>VARCHAR(250)</td>
+    <td>Patient's last name</td>
+  </tr>
+  <tr>
+    <td>patient_age</td>
+    <td>DATE</td>
+    <td>Date of birth or age reference</td>
+  </tr>
+  <tr>
+    <td>is_deleted</td>
+    <td>BIT</td>
+    <td>Soft delete flag (0 = active, 1 = deleted)</td>
+  </tr>
+  <tr>
+    <td>created_by</td>
+    <td>VARCHAR(50)</td>
+    <td>User who created the record</td>
+  </tr>
+  <tr>
+    <td>created_at</td>
+    <td>DATETIME</td>
+    <td>Timestamp when record was created</td>
+  </tr>
+  <tr>
+    <td>modified_by</td>
+    <td>VARCHAR(50)</td>
+    <td>User who last modified the record</td>
+  </tr>
+  <tr>
+    <td>modified_at</td>
+    <td>DATETIME</td>
+    <td>Timestamp of last modification</td>
+  </tr>
+</table>
 
 ## ✨ Notes
 
