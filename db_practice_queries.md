@@ -11,13 +11,24 @@ It includes fields for basic patient information along with metadata such as cre
     CREATE SCHEMA patient;
 
     GO
-
-    CREATE TABLE patient.details (
+    
+    CREATE TABLE patient.patient (
         id INT IDENTITY(1,1) PRIMARY KEY,
         guid UNIQUEIDENTIFIER DEFAULT NEWID(),
-        patient_first_name VARCHAR(250),
-        patient_last_name VARCHAR(250),
-        patient_age DATE,
+        first_name VARCHAR(250) NOT NULL,
+        last_name VARCHAR(250) NOT NULL,
+        middle_name VARCHAR(250),               
+        date_of_birth DATE,
+        gender CHAR(1) CHECK (gender IN ('M','F','O')), 
+        blood_group VARCHAR(3),                 
+        contact_number VARCHAR(20),
+        email VARCHAR(100),
+        address_line1 VARCHAR(250),
+        address_line2 VARCHAR(250),
+        city VARCHAR(100),
+        state VARCHAR(100),
+        country VARCHAR(100),
+        postal_code VARCHAR(20),
         is_deleted BIT DEFAULT 0,
         created_by VARCHAR(50) DEFAULT (SUSER_SNAME()),
         created_at DATETIME DEFAULT (GETDATE()),
