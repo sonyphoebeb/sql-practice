@@ -106,3 +106,7 @@ CREATE TABLE patient.details (
   <li>Supports soft deletion using <b>is_deleted</b> flag.</li>
 </ul>
 
+
+git mv slabs_and_general_practice.sql slabs_and_general_practice.md
+
+
