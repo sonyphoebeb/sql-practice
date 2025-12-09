@@ -101,3 +101,30 @@ It includes fields for basic patient information along with metadata such as cre
 * Uses NEWID() to auto-generate GUID.
 * Tracks record creation and modification using system functions.
 * Supports soft deletion using is_deleted flag.
+
+## 🧾 Sample Data for `patient.patient` Table
+
+    INSERT INTO patient.patient 
+    (first_name, last_name, middle_name, date_of_birth, gender, blood_group, contact_number, email,
+     address_line1, address_line2, city, state, country, postal_code)
+     
+    VALUES
+    ('Aarav', 'Sharma', 'Raj', '1990-02-15', 'M', 'B+', '+91-9876543210', 'aarav.sharma@gmail.com',
+     '12 MG Road', 'Apt 101', 'Mumbai', 'Maharashtra', 'India', '400001'),
+    
+    ('Ananya', 'Verma', NULL, '1995-08-20', 'F', 'O+', '+91-9123456789', 'ananya.verma@outlook.com',
+     '45 Park Street', NULL, 'Delhi', 'Delhi', 'India', '110001'),
+    
+    ('Rohan', 'Patel', 'Kumar', '1988-11-05', 'M', 'A-', '+91-9988776655', 'rohan.patel@yahoo.com',
+     '78 Lotus Lane', 'Block B', 'Ahmedabad', 'Gujarat', 'India', '380001'),
+    
+    ('Sanya', 'Rao', 'Priya', '2000-06-30', 'F', 'AB+', '+91-9871122334', 'sanya.rao@gmail.com',
+     '23 Flower Street', NULL, 'Bangalore', 'Karnataka', 'India', '560001'),
+    
+    ('Vivaan', 'Singh', NULL, '1985-12-12', 'M', 'O-', '+91-9811223344', 'vivaan.singh@outlook.com',
+     '56 Green Avenue', 'Suite 5', 'Chennai', 'Tamil Nadu', 'India', '600001');
+
+## 📝 View All Records
+
+    SELECT * FROM [patient].[patient];
+
